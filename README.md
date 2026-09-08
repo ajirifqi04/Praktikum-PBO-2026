@@ -30,7 +30,7 @@ Program ini adalah aplikasi console berbasis Java yang mengelola data perikanan,
 
 Program menyediakan 4 fungsi utama (CRUD): Tambah, Tampilkan, Ubah, dan Hapus data, yang seluruhnya diakses lewat satu menu utama.
 
-## Penjelasan
+## Penjelasan Alur Program
 
 #### 1. Tambah Data Perikanan (Menu 1)
 
@@ -73,8 +73,6 @@ Program menyediakan 4 fungsi utama (CRUD): Tambah, Tampilkan, Ubah, dan Hapus da
 - Mengubah kondisi perulangan while sehingga program berhenti.
 
 - Sistem menampilkan pesan penutup sebelum program selesai.
-
-## Alur Program
 
 #### 1. Menu Utama
 
