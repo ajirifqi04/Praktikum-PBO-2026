@@ -36,7 +36,7 @@ Keempat class entitas dihubungkan lewat ID yang sama di setiap transaksi data. D
 
 ## Penjelasan Alur Program
 
-Program dimulai dari main() di class MINPRO1. Empat ArrayList dibuat untuk menampung objek Ikan, LokasiPenangkapan, HasilPenangkapan, dan Stok. Selanjutnya program masuk ke perulangan while yang terus menampilkan menu selama user belum memilih Keluar (pilihan 5). Pilihan menu diproses lewat switch.
+Program dimulai dari main() di class Main. Empat ArrayList dibuat untuk menampung objek Ikan, LokasiPenangkapan, HasilPenangkapan, dan Stok. Selanjutnya program masuk ke perulangan while yang terus menampilkan menu selama user belum memilih Keluar (pilihan 5). Pilihan menu diproses lewat switch.
 
 ### 1. Tambah Data Perikanan (Menu 1)
 User memasukkan satu ID yang dipakai untuk satu transaksi data, misalnya I001. Setelah itu user mengisi data ikan (nama, jenis), lokasi penangkapan (nama lokasi, wilayah), hasil tangkapan (tanggal, kondisi), dan stok (jumlah, satuan) satu per satu. Dari input ini dibuat satu objek baru untuk tiap class lewat constructor, lalu dimasukkan ke ArrayList masing-masing. Terakhir program menampilkan pesan bahwa data berhasil ditambahkan.
