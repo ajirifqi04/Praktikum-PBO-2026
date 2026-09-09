@@ -10,7 +10,7 @@
 
 # SISTEM MANAJEMEN PENGELOLAAN PERIKANAN
 
-# Sistem Manajemen Pengelolaan Perikanan
+
 
 Mini project Praktikum Pemrograman Berorientasi Objek (PBO). Program CRUD berbasis Java untuk mengelola data sumber daya perikanan.
 
@@ -34,17 +34,6 @@ Program berjalan di console dan mengelola data perikanan: jenis ikan, lokasi pen
 
 Keempat class entitas dihubungkan lewat ID yang sama di setiap transaksi data. Datanya disimpan di ArrayList yang terpisah, tapi tetap bisa dicari dan ditampilkan sebagai satu kesatuan berdasarkan ID tersebut.
 
-## Konsep OOP yang Dipakai
-
-- Class dan Object untuk memodelkan tiap entitas
-- Constructor untuk inisialisasi atribut saat objek dibuat
-- Keyword `this` untuk membedakan atribut class dengan parameter constructor
-- Keyword `new` untuk instansiasi objek
-- Package untuk mengelompokkan class (com.mycompany.minpro1)
-- ArrayList untuk menyimpan kumpulan objek
-- Percabangan switch untuk memilih menu
-- Perulangan while dan for, dipakai untuk menjaga program tetap berjalan dan menampilkan data
-
 ## Penjelasan Alur Program
 
 Program dimulai dari main() di class MINPRO1. Empat ArrayList dibuat untuk menampung objek Ikan, LokasiPenangkapan, HasilPenangkapan, dan Stok. Selanjutnya program masuk ke perulangan while yang terus menampilkan menu selama user belum memilih Keluar (pilihan 5). Pilihan menu diproses lewat switch.
@@ -64,81 +53,34 @@ User memasukkan ID data yang mau dihapus. Program mencari dan menghapus data den
 ### 5. Keluar (Menu 5)
 Kondisi perulangan while diubah sehingga program berhenti. Program menampilkan pesan penutup sebelum selesai.
 
-## Cara Menjalankan
-
-1. Clone repository ini
-   ```
-   git clone <url-repo-ini>
-   ```
-2. Buka project di NetBeans (atau IDE Java lain)
-3. Jalankan file MINPRO1.java
-4. Ikuti menu yang muncul di console
-
-Contoh tampilan menu utama:
-```
-========================================
- SISTEM MANAJEMEN PENGELOLAAN PERIKANAN
-========================================
-1. Tambah Data Perikanan
-2. Tampilkan Data Perikanan
-3. Ubah Data Perikanan
-4. Hapus Data Perikanan
-5. Keluar
-========================================
-Pilih menu:
-```
-
 ## Demo Program
-
-Bagian ini perlu dilengkapi screenshot hasil menjalankan program. Sisipkan gambar pakai format `![deskripsi](nama-file-gambar.png)` di bawah tiap poin.
 
 ### 1. Menu Utama
 Tampilan awal aplikasi, menampilkan 5 pilihan menu.
 
-(sisipkan screenshot di sini)
+<img width="236" height="153" alt="MENU AWAL" src="https://github.com/user-attachments/assets/1d464838-7438-48bd-a747-0a1c18eff1eb" />
 
 ### 2. Tambah Data Perikanan (Menu 1)
 User memilih Menu 1, lalu input ID I001, data ikan, lokasi, hasil tangkapan, dan stok. Data tersimpan dan muncul konfirmasi berhasil.
 
-(sisipkan screenshot di sini)
+<img width="237" height="344" alt="menu 1" src="https://github.com/user-attachments/assets/7e6636f7-f6f0-4c0b-88f0-ceba64505a1d" />
 
 ### 3. Tampilkan Data Perikanan (Menu 2)
 User memilih Menu 2, program menampilkan seluruh data yang tersimpan, digabungkan berdasarkan ID.
 
-(sisipkan screenshot di sini)
+<img width="333" height="391" alt="menu 2" src="https://github.com/user-attachments/assets/22d32132-87f1-44be-9716-1f14cbc6bdb9" />
 
 ### 4. Ubah Data Perikanan (Menu 3)
 User memilih Menu 3, input ID data yang mau diubah, lalu mengisi data baru untuk menggantikan data lama.
 
-(sisipkan screenshot di sini)
+<img width="247" height="175" alt="menu 3" src="https://github.com/user-attachments/assets/62f3a59a-6d4c-4b23-95fb-1c765c9d5d3a" />
 
 ### 5. Hapus Data Perikanan (Menu 4)
 User memilih Menu 4, input ID data yang mau dihapus, data terkait terhapus dari seluruh ArrayList.
 
-(sisipkan screenshot di sini)
+<img width="244" height="322" alt="MENU 4" src="https://github.com/user-attachments/assets/af1caf9d-a36b-46fa-a9e7-4a6812c717ac" />
 
 ### 6. Keluar (Menu 5)
 User memilih Menu 5, program menampilkan pesan penutup dan berhenti.
 
-(sisipkan screenshot di sini)
-
-## Penjelasan Letak Penerapan Nilai Tambah
-
-Program ini tidak menerapkan poin Nilai Tambah (access modifier, encapsulation, validasi input). Atribut pada class entitas dibiarkan tanpa modifier akses eksplisit (default/package-private), tanpa getter/setter, dan tanpa validasi input dari user.
-
-Program ini fokus memenuhi Ketentuan Umum tugas saja:
-- Minimal 3 class di luar entry point
-- Minimal 3 atribut per class
-- Constructor
-- ArrayList
-- Percabangan dan input menu
-- Perulangan agar program tidak berhenti kecuali memilih Keluar
-- Perulangan untuk menampilkan data
-
-## Teknologi
-
-Java (JDK), NetBeans IDE
-
-## Penulis
-
-Mini Project Praktikum PBO, Sistem Informasi
+<img width="418" height="232" alt="MENU 5" src="https://github.com/user-attachments/assets/80b23179-0a9e-4811-9041-aac788fd612c" />
