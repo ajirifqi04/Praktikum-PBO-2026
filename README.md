@@ -10,102 +10,135 @@
 
 # SISTEM MANAJEMEN PENGELOLAAN PERIKANAN
 
+# Sistem Manajemen Pengelolaan Perikanan
+
+Mini project Praktikum Pemrograman Berorientasi Objek (PBO). Program CRUD berbasis Java untuk mengelola data sumber daya perikanan.
+
 ## Latar Belakang
 
-Pendataan sumber daya perikanan seperti jenis ikan, lokasi penangkapan, jumlah stok, dan kondisi hasil tangkapan sering kali masih dilakukan secara manual, sehingga rawan kesalahan dan menyulitkan pemantauan ketersediaan sumber daya secara akurat. Untuk mengatasi hal tersebut, dibuat program Sistem Manajemen Pengelolaan Perikanan menggunakan Java sebagai implementasi konsep Pemrograman Berorientasi Objek (PBO). Program ini menerapkan class, object, constructor, dan ArrayList untuk mengelola data perikanan melalui menu CRUD (tambah, tampilkan, ubah, hapus) berbasis console, sehingga proses pendataan menjadi lebih praktis dan terstruktur dibandingkan pencatatan manual.
+Data perikanan seperti jenis ikan, lokasi penangkapan, jumlah stok, dan kondisi hasil tangkapan biasanya masih dicatat secara manual. Cara ini rawan salah catat dan sulit dipakai untuk memantau ketersediaan sumber daya secara cepat.
 
-## Deskripsi Program
+Program ini dibuat sebagai implementasi konsep Pemrograman Berorientasi Objek (PBO) menggunakan Java, dengan tema Sistem Manajemen Pengelolaan Perikanan. Konsep class, object, constructor, dan ArrayList dipakai untuk mengelola data lewat menu CRUD (tambah, tampilkan, ubah, hapus) berbasis console.
 
-Program ini adalah aplikasi console berbasis Java yang mengelola data perikanan, meliputi data jenis ikan, lokasi penangkapan, hasil tangkapan, dan stok. Program terdiri dari 5 class:
+## Deskripsi Singkat Program
 
-- Main - class entry point (main()), berisi seluruh logika menu
+Program berjalan di console dan mengelola data perikanan: jenis ikan, lokasi penangkapan, hasil tangkapan, dan stok. Ada 4 fungsi utama yang bisa diakses lewat satu menu: tambah data, tampilkan data, ubah data, dan hapus data.
 
-- Ikan - entitas data jenis ikan (ID, nama ikan, jenis ikan)
+## Struktur Class
 
-- LokasiPenangkapan - entitas data lokasi penangkapan (ID, nama lokasi, wilayah)
+- `Main` - entry point, berisi main() dan logika menu
+- `Ikan` - data jenis ikan (idIkan, namaIkan, jenisIkan)
+- `LokasiPenangkapan` - data lokasi penangkapan (idLokasi, namaLokasi, wilayah)
+- `HasilPenangkapan` - data hasil tangkapan (idHasil, tanggal, kondisi)
+- `Stok` - data stok ikan (idStok, jumlahStok, satuan)
 
-- HasilPenangkapan - entitas data hasil tangkapan (ID, tanggal, kondisi)
+Keempat class entitas dihubungkan lewat ID yang sama di setiap transaksi data. Datanya disimpan di ArrayList yang terpisah, tapi tetap bisa dicari dan ditampilkan sebagai satu kesatuan berdasarkan ID tersebut.
 
-- Stok - entitas data stok ikan (ID, jumlah stok, satuan)
+## Konsep OOP yang Dipakai
 
-Program menyediakan 4 fungsi utama (CRUD): Tambah, Tampilkan, Ubah, dan Hapus data, yang seluruhnya diakses lewat satu menu utama.
+- Class dan Object untuk memodelkan tiap entitas
+- Constructor untuk inisialisasi atribut saat objek dibuat
+- Keyword `this` untuk membedakan atribut class dengan parameter constructor
+- Keyword `new` untuk instansiasi objek
+- Package untuk mengelompokkan class (com.mycompany.minpro1)
+- ArrayList untuk menyimpan kumpulan objek
+- Percabangan switch untuk memilih menu
+- Perulangan while dan for, dipakai untuk menjaga program tetap berjalan dan menampilkan data
 
 ## Penjelasan Alur Program
 
-#### 1. Tambah Data Perikanan (Menu 1)
+Program dimulai dari main() di class MINPRO1. Empat ArrayList dibuat untuk menampung objek Ikan, LokasiPenangkapan, HasilPenangkapan, dan Stok. Selanjutnya program masuk ke perulangan while yang terus menampilkan menu selama user belum memilih Keluar (pilihan 5). Pilihan menu diproses lewat switch.
 
-- Pengguna memasukkan satu ID yang sama untuk satu transaksi data (contoh: P001).
+### 1. Tambah Data Perikanan (Menu 1)
+User memasukkan satu ID yang dipakai untuk satu transaksi data, misalnya I001. Setelah itu user mengisi data ikan (nama, jenis), lokasi penangkapan (nama lokasi, wilayah), hasil tangkapan (tanggal, kondisi), dan stok (jumlah, satuan) satu per satu. Dari input ini dibuat satu objek baru untuk tiap class lewat constructor, lalu dimasukkan ke ArrayList masing-masing. Terakhir program menampilkan pesan bahwa data berhasil ditambahkan.
 
-- Pengguna memasukkan detail data ikan (nama, jenis), lokasi penangkapan (nama lokasi, wilayah), hasil tangkapan (tanggal, kondisi), dan stok (jumlah, satuan) secara berurutan.
+### 2. Tampilkan Data Perikanan (Menu 2)
+Program melakukan perulangan for ke daftar hasil tangkapan yang tersimpan. Untuk tiap data, dicari data terkait (ikan, lokasi, stok) di ArrayList lain yang punya ID sama, lalu ditampilkan sebagai satu kesatuan: ID, nama dan jenis ikan, lokasi dan wilayah, tanggal, kondisi, serta jumlah stok.
 
-- Dari input tersebut, sistem membuat satu objek baru dari masing-masing class (Ikan, LokasiPenangkapan, HasilPenangkapan, Stok) menggunakan constructor, lalu menambahkannya ke ArrayList masing-masing.
+### 3. Ubah Data Perikanan (Menu 3)
+User memasukkan ID data yang mau diubah. Program mencari posisi data tersebut di keempat ArrayList. Kalau ketemu, user mengisi data baru dan data lama diganti dengan objek baru berisi data terbaru. Kalau ID tidak ditemukan, program menampilkan pesan bahwa data tidak ada.
 
-- Sistem menampilkan konfirmasi bahwa data berhasil ditambahkan.
+### 4. Hapus Data Perikanan (Menu 4)
+User memasukkan ID data yang mau dihapus. Program mencari dan menghapus data dengan ID tersebut dari keempat ArrayList sekaligus, lalu menampilkan pesan berhasil atau pesan kalau ID tidak ditemukan.
 
-#### 2. Tampilkan Data Perikanan (Menu 2)
+### 5. Keluar (Menu 5)
+Kondisi perulangan while diubah sehingga program berhenti. Program menampilkan pesan penutup sebelum selesai.
 
-- Sistem melakukan perulangan for terhadap daftar hasil tangkapan yang tersimpan.
+## Cara Menjalankan
 
-- Untuk setiap data, sistem mencari data terkait (ikan, lokasi, stok) di ArrayList lain yang memiliki ID sama.
+1. Clone repository ini
+   ```
+   git clone <url-repo-ini>
+   ```
+2. Buka project di NetBeans (atau IDE Java lain)
+3. Jalankan file MINPRO1.java
+4. Ikuti menu yang muncul di console
 
-- Seluruh data ditampilkan sebagai satu kesatuan informasi: ID, nama & jenis ikan, lokasi & wilayah, tanggal, kondisi, serta jumlah stok.
+Contoh tampilan menu utama:
+```
+========================================
+ SISTEM MANAJEMEN PENGELOLAAN PERIKANAN
+========================================
+1. Tambah Data Perikanan
+2. Tampilkan Data Perikanan
+3. Ubah Data Perikanan
+4. Hapus Data Perikanan
+5. Keluar
+========================================
+Pilih menu:
+```
 
-#### 3. Ubah Data Perikanan (Menu 3)
+## Demo Program
 
-- Pengguna diminta memasukkan ID data yang ingin diubah.
+Bagian ini perlu dilengkapi screenshot hasil menjalankan program. Sisipkan gambar pakai format `![deskripsi](nama-file-gambar.png)` di bawah tiap poin.
 
-- Sistem mencari posisi (index) data tersebut di keempat ArrayList.
+### 1. Menu Utama
+Tampilan awal aplikasi, menampilkan 5 pilihan menu.
 
-- Jika ditemukan, pengguna memasukkan data baru (nama ikan, jenis ikan, lokasi, wilayah, tanggal, kondisi, jumlah stok, satuan), lalu sistem menggantinya dengan objek baru berisi data terbaru.
+(sisipkan screenshot di sini)
 
-- Jika ID tidak ditemukan, sistem menampilkan pesan bahwa data tidak ada.
+### 2. Tambah Data Perikanan (Menu 1)
+User memilih Menu 1, lalu input ID I001, data ikan, lokasi, hasil tangkapan, dan stok. Data tersimpan dan muncul konfirmasi berhasil.
 
-#### 4. Hapus Data Perikanan (Menu 4)
+(sisipkan screenshot di sini)
 
-- Pengguna diminta memasukkan ID data yang ingin dihapus.
+### 3. Tampilkan Data Perikanan (Menu 2)
+User memilih Menu 2, program menampilkan seluruh data yang tersimpan, digabungkan berdasarkan ID.
 
-- Sistem mencari dan menghapus data dengan ID tersebut dari keempat ArrayList sekaligus.
+(sisipkan screenshot di sini)
 
-- Sistem menampilkan konfirmasi keberhasilan atau pesan jika ID tidak ditemukan.
+### 4. Ubah Data Perikanan (Menu 3)
+User memilih Menu 3, input ID data yang mau diubah, lalu mengisi data baru untuk menggantikan data lama.
 
-#### 5. Keluar (Menu 5)
+(sisipkan screenshot di sini)
 
-- Mengubah kondisi perulangan while sehingga program berhenti.
+### 5. Hapus Data Perikanan (Menu 4)
+User memilih Menu 4, input ID data yang mau dihapus, data terkait terhapus dari seluruh ArrayList.
 
-- Sistem menampilkan pesan penutup sebelum program selesai.
+(sisipkan screenshot di sini)
 
-#### 1. Menu Utama
+### 6. Keluar (Menu 5)
+User memilih Menu 5, program menampilkan pesan penutup dan berhenti.
 
-Tampilan awal aplikasi Sistem Manajemen Pengelolaan Perikanan, menampilkan 5 pilihan menu yang dapat dipilih pengguna.
+(sisipkan screenshot di sini)
 
-<img width="236" height="153" alt="MENU AWAL" src="https://github.com/user-attachments/assets/c0ecd7e6-c680-488f-b3bb-8f1f93c22d02" />
+## Penjelasan Letak Penerapan Nilai Tambah
 
-#### 2. Tambah Data Perikanan (Menu 1)
+Program ini tidak menerapkan poin Nilai Tambah (access modifier, encapsulation, validasi input). Atribut pada class entitas dibiarkan tanpa modifier akses eksplisit (default/package-private), tanpa getter/setter, dan tanpa validasi input dari user.
 
-Pengguna memilih Menu 1, lalu menginput ID, data ikan, lokasi, hasil tangkapan, dan stok secara berurutan. Setelah semua data diisi, sistem menyimpan data dan menampilkan konfirmasi keberhasilan.
+Program ini fokus memenuhi Ketentuan Umum tugas saja:
+- Minimal 3 class di luar entry point
+- Minimal 3 atribut per class
+- Constructor
+- ArrayList
+- Percabangan dan input menu
+- Perulangan agar program tidak berhenti kecuali memilih Keluar
+- Perulangan untuk menampilkan data
 
-<img width="237" height="344" alt="menu 1" src="https://github.com/user-attachments/assets/c6c8f1f1-ab7f-46a3-b3d4-361572724a1e" />
+## Teknologi
 
-#### 3. Tampilkan Data Perikanan (Menu 2)
+Java (JDK), NetBeans IDE
 
-Pengguna memilih Menu 2, lalu sistem menampilkan seluruh data perikanan yang tersimpan, mencakup data ikan, lokasi, hasil tangkapan, dan stok yang sudah digabungkan berdasarkan ID.
+## Penulis
 
-<img width="333" height="391" alt="menu 2" src="https://github.com/user-attachments/assets/3dfe82ab-88e6-4f6d-bd9b-d116ec8a7094" />
-
-#### 4. Ubah Data Perikanan (Menu 3)
-
-Pengguna memilih Menu 3, lalu menginput ID data yang ingin diubah. Sistem menampilkan form input data baru, dan setelah diisi, data lama digantikan dengan data terbaru.
-
-<img width="247" height="175" alt="menu 3" src="https://github.com/user-attachments/assets/cfb68360-9a56-4232-b2cf-f30c01128237" />
-
-#### 5. Hapus Data Perikanan (Menu 4)
-
-Pengguna memilih Menu 4, lalu menginput ID data yang ingin dihapus. Sistem menghapus data dengan ID tersebut dari seluruh ArrayList terkait dan menampilkan konfirmasi.
-
-<img width="244" height="322" alt="MENU 4" src="https://github.com/user-attachments/assets/43d3554e-18a0-4f89-ae4d-538ebb114572" />
-
-#### 6. Keluar (Menu 5)
-
-Pengguna memilih Menu 5, sistem menampilkan pesan penutup dan program berhenti berjalan.
-
-<img width="418" height="232" alt="MENU 5" src="https://github.com/user-attachments/assets/c3e54a70-688e-4841-9a10-618d53ddeb73" />
+Mini Project Praktikum PBO, Sistem Informasi
